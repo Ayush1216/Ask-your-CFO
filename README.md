@@ -22,7 +22,7 @@ An AI-powered financial analysis assistant that helps CFOs get instant insights 
 1. **Clone the repository**
    ```bash
    git clone <repository-url>
-   cd cfo-copilot
+   cd Finbot
    ```
 
 2. **Install dependencies**
@@ -31,9 +31,8 @@ An AI-powered financial analysis assistant that helps CFOs get instant insights 
    ```
 
 3. **Run the application**
-   ```bash
+   
    streamlit run app.py
-   ```
 
 4. **Open your browser**
    Navigate to `http://localhost:8501`
@@ -98,7 +97,7 @@ The application expects an Excel file (`data.xlsx`) with the following sheets:
 ## Architecture
 
 ```
-cfo-copilot/
+Finbot/
 ├── app.py                 # Streamlit web application
 ├── requirements.txt       # Python dependencies
 ├── data.xlsx             # Financial data (Excel file)
@@ -156,65 +155,5 @@ Or run specific tests:
 pytest tests/test_agent.py::TestIntentClassifier::test_revenue_vs_budget_intent
 ```
 
-## Development
 
-### Adding New Analysis Types
 
-1. **Add intent pattern** in `agent/intent_classifier.py`
-2. **Create analysis function** in `agent/financial_analyzer.py`
-3. **Update agent routing** in `agent/cfo_agent.py`
-4. **Add tests** in `tests/test_agent.py`
-
-### Customizing Charts
-
-Charts are generated using Plotly in `agent/financial_analyzer.py`. You can customize:
-- Colors and styling
-- Chart types (bar, line, scatter, etc.)
-- Layout and formatting
-- Interactive features
-
-## Troubleshooting
-
-### Common Issues
-
-1. **"Error initializing CFO Agent"**
-   - Check that `data.xlsx` exists in the project root
-   - Verify Excel file has required sheets (actuals, budget, cash, fx)
-
-2. **"No data available"**
-   - Ensure data sheets have the correct column names
-   - Check that data is in the expected format
-
-3. **Charts not displaying**
-   - Verify Plotly is installed: `pip install plotly`
-   - Check browser console for JavaScript errors
-
-### Data Validation
-
-The system expects:
-- Month format: YYYY-MM (e.g., 2023-01)
-- Currency: USD (other currencies supported via FX rates)
-- Account categories: Revenue, COGS, Opex:*, etc.
-
-## Contributing
-
-1. Fork the repository
-2. Create a feature branch
-3. Make your changes
-4. Add tests for new functionality
-5. Submit a pull request
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-## Support
-
-For questions or issues:
-1. Check the troubleshooting section
-2. Review the test cases for usage examples
-3. Open an issue on GitHub
-
----
-
-**CFO Copilot** - Making financial analysis as easy as asking a question! 🚀
